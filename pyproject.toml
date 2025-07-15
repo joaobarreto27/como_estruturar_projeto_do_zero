@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "como-estruturar-projeto-do-zero"
+version = "0.1.0"
+description = "Como estruturar projeto de ETL"
+authors = ["joaobarreto27 <joao.vito1951@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+requires-python = ">=3.12"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
