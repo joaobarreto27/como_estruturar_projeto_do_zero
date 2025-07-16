@@ -14,16 +14,12 @@ return: lista de dataframes
 
 def extract_from_excel(folder_name: str, extension_type) -> List[pd.DataFrame]:
     current_dir = Path(__file__).resolve().parents[1]
-    path = os.path.join(current_dir,folder_name)
+    path_file = os.path.join(current_dir,folder_name)
 
-    all_files = glob.glob(os.path.join(path, f"*.{extension_type}"))
+    all_files = glob.glob(os.path.join(path_file, f"*.{extension_type}"))
     
     data_frame_list = []
     for file in all_files:
         data_frame_list.append(pd.read_excel(file))
 
     return data_frame_list
-
-if __name__ == "__main__":
-    data_frame_list = extract_from_excel("input", "xlsx")
-    print(data_frame_list)
