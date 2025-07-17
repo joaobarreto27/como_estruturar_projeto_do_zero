@@ -3,18 +3,18 @@ import os
 import glob
 from pathlib import Path
 
-"""
-receber um dataframe e salvar como excel
-
-args: 
-    data_frame (pd.DataFrame): dataframe a ser salvo
-    output_folder (str): caminho onde o arquivo será salvo
-    file_name (str): nome do arquivo a ser salvo
-
-return: Arquivo Excel salvo no caminho especificado
-"""
-
 def load_excel(dataframe: pd.DataFrame, output_folder:str, file_name:str) -> str:
+    """
+    receber um dataframe e salvar como excel
+
+    args: 
+        data_frame (pd.DataFrame): dataframe a ser salvo
+        output_folder (str): caminho onde o arquivo será salvo
+        file_name (str): nome do arquivo a ser salvo
+
+    return: Arquivo Excel salvo no caminho especificado
+    """
+
     current_dir = Path(__file__).resolve().parents[1]
     path_file = os.path.join(current_dir, output_folder, file_name)
 

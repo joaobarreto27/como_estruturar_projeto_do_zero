@@ -4,15 +4,15 @@ import pandas as pd
 from typing import List
 from pathlib import Path
 
-"""
-função para ler os arquivos de uma pasta data/input e retornar uma lista de dataframes
-
-args: input_path (str): caminho da pasta com os arquivos
-
-return: lista de dataframes
-"""
-
 def extract_from_excel(folder_name: str, extension_type) -> List[pd.DataFrame]:
+    """
+    função para ler os arquivos de uma pasta data/input e retornar uma lista de dataframes
+
+    args: input_path (str): caminho da pasta com os arquivos
+
+    return: lista de dataframes
+    """
+
     current_dir = Path(__file__).resolve().parents[1]
     path_file = os.path.join(current_dir,folder_name)
 
