@@ -1,10 +1,11 @@
-from pathlib import Path
-import os
 import glob
+import os
+from pathlib import Path
+
 folder_name = "input"
 extension_type = "xlsx"
 current_dir = Path(__file__).resolve().parents[1]
-path = os.path.join(current_dir,folder_name)
+path = os.path.join(current_dir, folder_name)
 
 all_files = os.path.join(path, "*.", extension_type)
 print(all_files)

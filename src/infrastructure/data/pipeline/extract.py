@@ -1,8 +1,10 @@
-import os
 import glob
-import pandas as pd
-from typing import List
+import os
 from pathlib import Path
+from typing import List
+
+import pandas as pd
+
 
 def extract_from_excel(folder_name: str, extension_type) -> List[pd.DataFrame]:
     """
@@ -14,10 +16,10 @@ def extract_from_excel(folder_name: str, extension_type) -> List[pd.DataFrame]:
     """
 
     current_dir = Path(__file__).resolve().parents[1]
-    path_file = os.path.join(current_dir,folder_name)
+    path_file = os.path.join(current_dir, folder_name)
 
     all_files = glob.glob(os.path.join(path_file, f"*.{extension_type}"))
-    
+
     data_frame_list = []
     for file in all_files:
         data_frame_list.append(pd.read_excel(file))
