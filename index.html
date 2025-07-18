@@ -195,6 +195,56 @@
         C --&gt; D[Gera um Dataframe Consolidado]
         D --&gt; |Salva o consolidado em Excel| E[Pasta Output: Um arquivo único Excel]
     end</code></pre>
+<h1 id="funcao-de-transformacao-de-dados">Função de transformação de dados</h1>
+<div class="doc doc-object doc-function">
+<a id="src.infrastructure.data.pipeline.extract.extract_from_excel"></a>
+<div class="doc doc-contents first">
+<p>função para ler os arquivos de uma pasta data/input e retornar uma lista de dataframes</p>
+<p>args: input_path (str): caminho da pasta com os arquivos</p>
+<p>return: lista de dataframes</p>
+<details class="quote">
+<summary>Source code in <code>src\infrastructure\data\pipeline\extract.py</code></summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">extract_from_excel</span><span class="p">(</span><span class="n">folder_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">extension_type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    função para ler os arquivos de uma pasta data/input e retornar uma lista de dataframes</span>
+
+<span class="sd">    args: input_path (str): caminho da pasta com os arquivos</span>
+
+<span class="sd">    return: lista de dataframes</span>
+<span class="sd">    """</span>
+
+    <span class="n">current_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">path_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_dir</span><span class="p">,</span> <span class="n">folder_name</span><span class="p">)</span>
+
+    <span class="n">all_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_file</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"*.</span><span class="si">{</span><span class="n">extension_type</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+
+    <span class="n">data_frame_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">all_files</span><span class="p">:</span>
+        <span class="n">data_frame_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">data_frame_list</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</div>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
