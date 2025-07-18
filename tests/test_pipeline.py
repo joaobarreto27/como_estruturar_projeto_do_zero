@@ -1,11 +1,12 @@
 import pandas as pd
+
 from src.infrastructure.data.pipeline import transform
 
 df_1 = pd.DataFrame({"col1": [1, 2], "col2": [3, 4]})
 df_2 = pd.DataFrame({"col1": [5, 6], "col2": [7, 8]})
 
 
-def testar_a_concatenacao_da_lista_de_dataframe():
+def testar_a_concatenacao_da_lista_de_dataframe() -> None:
     """use o arrange act e assert para testar a função contact_data_frames"""
 
     # arrange
@@ -16,6 +17,6 @@ def testar_a_concatenacao_da_lista_de_dataframe():
     df = transform.contact_data_frames(data_frame_list)
 
     # assert
-    assert df.shape == (4, 2)
-    assert data_frame.equals(df)
-    assert df.shape != (5, 2)
+    assert df.shape == (4, 2)  # nosec B101
+    assert data_frame.equals(df)  # nosec B101
+    assert df.shape != (5, 2)  # nosec B101

@@ -7,7 +7,7 @@ readme = "README.md"
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.12"
+python = ">=3.10,<3.12"
 pandas = "^2.3.1"
 openpyxl = "^3.1.5"
 pytest = "^8.4.1"
@@ -20,10 +20,16 @@ mkdocstrings-python = "^1.16.12"
 pygments = "^2.19.2"
 mkdocs-material = "^9.6.15"
 pymdown-extensions = "^10.16"
+mkdocs-mermaid2-plugin = "^1.2.1"
+pre-commit = "^4.2.0"
+mypy = "^1.17.0"
+types-setuptools = "^80.9.0.20250529"
+pandas-stubs = "^2.3.0.250703"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.1"
 black = "^25.1.0"
+mkdocs-mermaid2-plugin = "^1.2.1"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -41,3 +47,7 @@ test = "poetry run pytest -v"
 kill = "kill -9 $(lsof -t -i :8000)"
 docs = "mkdocs serve"
 docs-deploy = "mkdocs gh-deploy --clean"
+
+[tool.mypy]
+strict = true
+show_error_codes = true

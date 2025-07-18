@@ -5,7 +5,7 @@ theme:
     primary: blue
   language: en
 
-repo_name: "joaobarreto27/como_estruturar_projeto_do_zero"
+repo_name: "joaobarreto27/como-estruturar-projeto-do-zero"
 repo_url: "https://github.com/joaobarreto27/como_estruturar_projeto_do_zero"
 
 markdown_extensions:
@@ -13,8 +13,10 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
   - search
   - mkdocstrings:
       default_handler: python
+  - mermaid2
