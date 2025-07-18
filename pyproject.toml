@@ -15,6 +15,11 @@ isort = "^6.0.1"
 pydocstyle = "^6.3.0"
 pip-audit = "^2.9.0"
 taskipy = "^1.14.1"
+mkdocs = "^1.6.1"
+mkdocstrings-python = "^1.16.12"
+pygments = "^2.19.2"
+mkdocs-material = "^9.6.15"
+pymdown-extensions = "^10.16"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.1"
@@ -27,5 +32,12 @@ build-backend = "poetry.core.masonry.api"
 [tool.isort]
 profile = "black"
 
+[tool.poetry.scripts]
+docs-deploy = "mkdocs.__main__:cli"
+
 [tool.taskipy.tasks]
 format = "isort . && black ."
+test = "poetry run pytest -v"
+kill = "kill -9 $(lsof -t -i :8000)"
+docs = "mkdocs serve"
+docs-deploy = "mkdocs gh-deploy --clean"

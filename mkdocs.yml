@@ -1,0 +1,20 @@
+site_name: Estrutura de Projetos do Zero
+theme:
+  name: material # or other theme
+  palette:
+    primary: blue
+  language: en
+
+repo_name: "joaobarreto27/como_estruturar_projeto_do_zero"
+repo_url: "https://github.com/joaobarreto27/como_estruturar_projeto_do_zero"
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
