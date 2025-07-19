@@ -5,6 +5,7 @@ description = "Como estruturar projeto de ETL"
 authors = ["joaobarreto27 <joao.vito1951@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
@@ -30,6 +31,7 @@ pandas-stubs = "^2.3.0.250703"
 pytest = "^8.4.1"
 black = "^25.1.0"
 mkdocs-mermaid2-plugin = "^1.2.1"
+pre-commit = "^4.2.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

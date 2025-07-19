@@ -6,3 +6,4 @@ if __name__ == "__main__":
     )
     df = transform.contact_data_frames(data_frame_list=data_frame_list)
     load.load_excel(df, "output", "output_etl")
+    print("ETL process completed successfully.")
