@@ -1,4 +1,4 @@
-from pipeline import extract, load, transform
+from .pipeline import extract, load, transform
 
 if __name__ == "__main__":
     data_frame_list = extract.extract_from_excel(

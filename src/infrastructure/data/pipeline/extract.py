@@ -6,7 +6,7 @@ from typing import List
 import pandas as pd
 
 
-def extract_from_excel(folder_name: str, extension_type) -> List[pd.DataFrame]:
+def extract_from_excel(folder_name: str, extension_type: str) -> List[pd.DataFrame]:
     """
     função para ler os arquivos de uma pasta data/input e retornar uma lista de dataframes
 
