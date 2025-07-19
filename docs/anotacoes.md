@@ -1,4 +1,3 @@
-# TODO: Baixar arquivos que é mostrado na aula, está no repositorio
 - Qual Versão Python Utilizar - Recomendável a mais recente, porém só aceitavel descer a versão, se alguma biblioteca utilizada, aceitar somente versões anteriores
 
 - Comando ``pyenv local "numero da versão"``
