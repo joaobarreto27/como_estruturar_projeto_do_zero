@@ -24,4 +24,8 @@ def extract_from_excel(folder_name: str, extension_type: str) -> List[pd.DataFra
     for file in all_files:
         data_frame_list.append(pd.read_excel(file))
 
+    print(
+        "Processo ETL concluído com sucesso! Todos os arquivos foram lidos e convertidos em DataFrames."
+    )
+
     return data_frame_list
