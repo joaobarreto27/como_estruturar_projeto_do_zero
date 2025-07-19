@@ -81,6 +81,7 @@
 - Adicione ``poetry add pandas-stubs``
 
 - Comandos:
+    poetry add --group dev pre-commit
     pre-commit clean
     pre-commit install
     pre-commit run --all-files

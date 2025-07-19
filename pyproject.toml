@@ -5,6 +5,7 @@ description = "Como estruturar projeto de ETL"
 authors = ["joaobarreto27 <joao.vito1951@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
